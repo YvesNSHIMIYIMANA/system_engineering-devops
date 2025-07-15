@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script displays all running processes showing UID, TTY, and CMD only
+# This script displays the UID (user ID) of the user running the script
 
-ps -eo uid,tty,cmd
+echo "$UID"
