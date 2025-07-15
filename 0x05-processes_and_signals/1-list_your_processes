@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script displays all running processes in a human-readable and hierarchical format
+# This script displays all running processes showing UID, TTY, and CMD only
 
-ps -eF --forest
+ps -eo uid,tty,cmd
