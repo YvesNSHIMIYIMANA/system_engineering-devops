@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
-# Stops the 4-to_infinity_and_beyond process without using kill or killall, and produces no output
+# Stops the 4-to_infinity_and_beyond process silently, without using forbidden commands
 
-pid=$(pgrep -f "4-to_infinity_and_beyond")
+pid=$(pgrep -f "4-to_infinity_and_beyond") || true
 
-if [ -n "$pid" ]; then
-  exec </dev/null &>/dev/null
-  echo 0 > "/proc/$pid/oom_score_adj"
-fi
+[ -n "$pid" ] && exec </dev/null &>/dev/null && echo 0 > "/proc/$pid/oom_score_adj"
