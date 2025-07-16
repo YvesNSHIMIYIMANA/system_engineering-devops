@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script displays the UID (user ID) of the user running the script
+# Display all running processes in a user-oriented format with hierarchy
 
-echo "$UID"
+ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,cmd --forest
